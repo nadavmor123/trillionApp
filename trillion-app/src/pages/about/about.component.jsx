@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import "./about.style.scss";
 
 const AboutPage = () => {
-  useEffect(() => {
-    console.log("------------about init useEffect-----------");
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="about">
