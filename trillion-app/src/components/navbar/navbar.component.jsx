@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Drawer } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -41,7 +42,9 @@ const NavBar = () => {
           <List disablePadding dense>
             {items.map(({ label, name, ...rest }) => (
               <ListItem key={name} button {...rest}>
-                <ListItemText>{label}</ListItemText>
+                <ListItemText>
+                  <Link to={"/" + name}>{label}</Link>
+                </ListItemText>
               </ListItem>
             ))}
           </List>
