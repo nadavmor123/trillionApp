@@ -7,9 +7,9 @@ import "./App.css";
 
 function App() {
   return (
-    <div id="background-image">
+    <div className="app-container">
       <NavBar></NavBar>
-      <Route exact path="/home" component={HomepPage} />
+      <Route exact path="/" component={HomepPage} />
       <Route exact path="/about" component={AboutPage} />
     </div>
   );

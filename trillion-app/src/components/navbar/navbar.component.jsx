@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Hamburger from "../../images/hamburger.png";
 import "./navbar.style.scss";
 
 const NavBar = () => {
   const items = [
-    { name: "home", label: "Home" },
-    { name: "about", label: "About" },
+    { name: "home", label: "Home", path: "" },
+    { name: "about", label: "About", path: "about" },
   ];
 
   const [toggle, setToggle] = React.useState({
@@ -32,7 +33,9 @@ const NavBar = () => {
 
   return (
     <div className="navbar-content">
-      <Button onClick={handleToggle}>Open Navebar</Button>
+      <Button onClick={handleToggle}>
+        <img src={Hamburger} />
+      </Button>
       <Drawer
         anchor={toggle.anchor}
         open={toggle["isOpened"]}
@@ -40,10 +43,10 @@ const NavBar = () => {
       >
         <div className="navbar-bottons">
           <List disablePadding dense>
-            {items.map(({ label, name, ...rest }) => (
+            {items.map(({ label, name, path, ...rest }) => (
               <ListItem key={name} button {...rest}>
                 <ListItemText>
-                  <Link to={"/" + name}>{label}</Link>
+                  <Link to={"/" + path}>{label}</Link>
                 </ListItemText>
               </ListItem>
             ))}
