@@ -14,8 +14,28 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-text {
   position: absolute;
   top: 70px;
   left: 50px;
-  width: 40px;
+  width: 80px;
   height: 40px;
   margin: 0;
   padding: 0;
+}
+
+.MuiListItemText-root.MuiListItemText-dense a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.navbar-link {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+}
+
+.MuiListItemText-root {
+  padding-bottom: 10px !important;
 }

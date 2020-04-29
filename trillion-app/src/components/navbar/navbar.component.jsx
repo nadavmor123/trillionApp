@@ -46,7 +46,9 @@ const NavBar = () => {
             {items.map(({ label, name, path, ...rest }) => (
               <ListItem key={name} button {...rest}>
                 <ListItemText>
-                  <Link to={"/" + path}>{label}</Link>
+                  <Link to={"/" + path}>
+                    <div className="navbar-link">{label}</div>
+                  </Link>
                 </ListItemText>
               </ListItem>
             ))}
