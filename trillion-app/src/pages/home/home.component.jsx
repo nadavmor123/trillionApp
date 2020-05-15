@@ -1,52 +1,47 @@
 import React, { useCallback, useRef, useEffect } from "react";
 import TweenLite from "gsap";
 import "./home.style.scss";
-import Title from "../../images/title.png";
-import Text from "../../images/text.png";
+import Earth from "../../images/earth.png";
+import Ground from "../../images/ground.png";
 
 const HomePage = () => {
-  const [treeRef] = useHookWithRefTreeCallback();
-
-  const [headerRef] = useHookWithRefHeaderCallback();
+  const [earthRef] = useHookWithRefTreeCallback();
+  const [groundRef] = useHookWithRefGroundCallback();
 
   useEffect(() => {}, []);
 
   return (
     <div id="background-image">
-      <div className="page-header" ref={headerRef}>
-        <img src={Title}></img>
+      <div className="earth" ref={earthRef}>
+        <img src={Earth}></img>
       </div>
-      <div className="page-text">
-        <img src={Text}></img>
+      <div className="ground" ref={groundRef}>
+        <img src={Ground}></img>
       </div>
-      <div className="tree-wrapper-1" ref={treeRef}></div>
-      <div className="tree-wrapper-2" ref={treeRef}></div>
-      <div className="tree-wrapper-3" ref={treeRef}></div>
     </div>
   );
 
   function useHookWithRefTreeCallback() {
     const ref = useRef(null);
     const setRef = useCallback((node) => {
-      let delay = Math.floor(Math.random() * 9) + 1;
-      if (node) {
-        node.style.opacity = 0;
-        TweenLite.to(node, delay, { opacity: 1 });
-      }
+      // if (node) {
+      //   node.style.opacity = 0;
+      //   TweenLite.to(node, 2, { opacity: 1 });
+      // }
       // Save a reference to the node
       ref.current = node;
     }, []);
     return [setRef];
   }
 
-  function useHookWithRefHeaderCallback() {
+  function useHookWithRefGroundCallback() {
     const ref = useRef(null);
     const setRef = useCallback((node) => {
-      let delay = Math.floor(Math.random() * 9) + 1;
-      if (node) {
-        node.style.opacity = 0;
-        TweenLite.to(node, delay, { opacity: 1 });
-      }
+      // let delay = Math.floor(Math.random() * 9) + 1;
+      // if (node) {
+      //   node.style.opacity = 0;
+      //   TweenLite.to(node, delay, { opacity: 1 });
+      // }
       // Save a reference to the node
       ref.current = node;
     }, []);
