@@ -5,20 +5,19 @@
   height: 100vh;
 }
 
-// .page-text {
-//   margin-top: 40px;
-//   text-align: center;
-// }
-
-// .page-header {
-//   padding-top: 80px;
-//   text-align: center;
-// }
-
-.earth > img {
-  width: 50px;
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.ground > img {
-  width: 328px;
+.earth > img {
+  width: 150px;
+}
+
+.ground img {
+  width: 100%;
+  position: absolute;
+  bottom: -200px;
 }
